@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">coloredworld</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="reset">reset</string>
+    <string name="test_guidelines">You will see a series of random dot images. Try to find a hidden shape in the dots and click on the appropriate buttons to indicate what you see</string>
+
+</resources>
