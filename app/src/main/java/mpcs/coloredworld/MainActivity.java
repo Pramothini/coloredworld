@@ -61,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
             if(total_cvd_score >= 10){
                 result = "You have total color vision deficiency";
             }
-            tv.setText(result + "/n" +" red_green_score = "+red_green_score+" normal_score = "+normal_score+
+            tv.setText(result +"   red_green_score = "+red_green_score+" normal_score = "+normal_score+
                     " total_cvd_score = "+total_cvd_score);
         }
 
