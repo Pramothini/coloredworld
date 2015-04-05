@@ -35,18 +35,18 @@ public class MainActivity extends ActionBarActivity {
             setContentView(R.layout.test_instructions);
         }
         else if(iactivityno == 18 && (result.contains("Normal") || result.contains("Tritanomaly"))){
-            //case 1: if all answers are correct for all the first 6 plates, user does not have any red-green deficiency
-            //case 2: if 13 or more answers are correct for the first 15 plates, user does not have any red-green deficiency
+            //case 1: if all answers are correct for all the first 6 plates,and 2 trita plates, user does not have any deficiency
+            //case 2: if 13 or more answers are correct for the first 15 plates,and 2 trita plates user does not have any deficiency
             setContentView(R.layout.test_result);
             TextView tv = (TextView) findViewById(R.id.test_result);
-            tv.setText(result +" red_green_score = "+red_green_score+" normal_score = "+normal_score+
-                    " total_cvd_score = "+total_cvd_score);
+//            tv.setText(result +" red_green_score = "+red_green_score+" normal_score = "+normal_score+" total_cvd_score = "+total_cvd_score);
+            tv.setText(result + ". Your score is "+normal_score);
         }
         else if(iactivityno <= 19){
             setContentView(R.layout.activity_main);
             if(iactivityno == 7 && normal_score == 6){
                 iactivityno = 16;
-                result = "Normal Vision - no red green blindness";
+                result = "Normal Vision";
             }
             TextView tv = (TextView) findViewById(R.id.plate_number);
 
@@ -61,8 +61,8 @@ public class MainActivity extends ActionBarActivity {
             if(total_cvd_score >= 10){
                 result = "You have total color vision deficiency";
             }
-            tv.setText(result +"   red_green_score = "+red_green_score+" normal_score = "+normal_score+
-                    " total_cvd_score = "+total_cvd_score);
+//            tv.setText(result +". red_green_score = "+red_green_score+" normal_score = "+normal_score+" total_cvd_score = "+total_cvd_score);
+            tv.setText(result + ". You scored "+normal_score+"/19");
         }
 
     }
@@ -85,20 +85,20 @@ public class MainActivity extends ActionBarActivity {
                 cvd = "Deuteranopia";
             }
             else if((normal_vision[iactivityno-1]).equals(btn.getText())){
-                cvd = "Normal";
+                cvd = "Normal Vision";
             }
             if(iactivityno == 18)
                 result = cvd;
             else if(iactivityno == 19){
                 if(!result.contains(cvd)){
-                    result = "This color test could not detect your cvd";
+                    result = "You have red-green deficiency";
                 }
             }
         }
         else if((normal_vision[iactivityno-1]).equals(btn.getText())){
          if(iactivityno == 16){
              if(normal_score >= 13){
-                 result = "Normal CV - no red green blindness";
+                 result = "Normal Vision";
              }
          }
             normal_score++;
@@ -171,7 +171,7 @@ public class MainActivity extends ActionBarActivity {
                 image.setImageResource(R.drawable.plate14);
                 break;
             case 6:
-                    image.setImageResource(R.drawable.plate3);
+                image.setImageResource(R.drawable.plate3);
                 break;
             case 7:
                 image.setImageResource(R.drawable.plate5);
@@ -201,7 +201,7 @@ public class MainActivity extends ActionBarActivity {
                 image.setImageResource(R.drawable.tritaplate2);
                 break;
             case 16:
-                image.setImageResource(R.drawable.tritaplate3);
+                image.setImageResource(R.drawable.tritaplate1);
                 break;
             case 17:
                 image.setImageResource(R.drawable.plate16_v1);
