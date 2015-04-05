@@ -19,6 +19,7 @@
         android:text="continue"
         android:id="@+id/button"
         android:onClick="reset"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="24dp" />
 
 </LinearLayout>
